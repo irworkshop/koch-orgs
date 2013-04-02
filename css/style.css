@@ -1,0 +1,5 @@
+.pager, 
+.table-filter {
+    float: left;
+    width: 50%;
+}

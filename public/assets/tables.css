@@ -170,3 +170,8 @@ Default Theme
 	transition: height 0.1s ease;
 }
 
+.pager, 
+.table-filter {
+    float: left;
+    width: 50%;
+}

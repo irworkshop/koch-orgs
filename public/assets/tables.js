@@ -12645,33 +12645,6 @@ FusionTable.prototype.parse = function(columns, rows) {
     });
 };
 
-/***
-FusionTable.prototype.render = function(selector, columns) {
-    // grab the selector, build a table
-    columns = (columns || this.columns);
-    var root = d3.select(selector)
-      , table = root.append('table')
-      , data = this.data;
-
-    // build up our basics
-    table.append('thead').append('tr').selectAll('th')
-        .data(columns)
-      .enter().append('th')
-        .text(String);
-
-    var tr = table.append('tbody').selectAll('tr')
-        .data(data)
-      .enter().append('tr');
-
-    tr.selectAll('td')
-        .data(function(d) { return d3.values(d); })
-      .enter().append('td')
-        .text(function(d, i) { return d[columns[i]]; });
-
-    $(table.node()).tablesorter();
-};
-***/
-
 FusionTable.prototype.render = function(selector, columns) {
     var root = $(selector);
 
@@ -12692,14 +12665,7 @@ FusionTable.prototype.render = function(selector, columns) {
     .tablesorterMultiPageFilter({
         filterSelector: root.find('.table-filter input')
     });
-    
-    /***
-    $(selector).html(JST.table({
-        data: this.data,
-        columns: columns || this.columns
-    }));
-    ***/
-    return this;
+        return this;
 };
 
 
