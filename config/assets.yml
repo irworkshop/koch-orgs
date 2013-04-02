@@ -1,0 +1,20 @@
+package_assets: on
+embed_assets: off
+compress_assets: off
+gzip_assets: off
+template_function: _.template
+
+javascripts:
+  tables:
+    - components/jquery/jquery.js
+    - components/jquery.tablesorter/js/jquery.tablesorter.js
+    - components/underscore/underscore.js
+    - js/jquery.tablesorter.multipagefilter.js
+    - js/jquery.tablesorter.pager.js
+    - js/fusiontables.js
+    - templates/table.jst
+
+stylesheets:
+  tables:
+    - components/jquery.tablesorter/css/theme.default.css
+    - css/style.css

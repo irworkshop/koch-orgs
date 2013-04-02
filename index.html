@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+<head>
+    <title>Koch Industries</title>
+
+    <link rel="stylesheet" type="text/css" href="public/assets/tables.css">
+
+    <!--
+    <script src="components/jquery/jquery.js"></script>
+    <script src="components/jquery.tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="components/d3/d3.min.js"></script>
+    <script src="components/underscore/underscore-min.js"></script>
+    -->
+    <script src="public/assets/tables.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+window.APIKEY = "AIzaSyBTQ-SbzIJj5NMW7-1AKfxAgmCsEdXPHo4";
+window.TABLE_ID = "1Zj-Lh98XTVV3wpKUXgtW0gjyuwtE-eUhwDjlyaU";
+
+
+var table = new FusionTable(APIKEY, TABLE_ID);
+
+table.fetch(function(err, data) {
+    table.render('body', table.columns.slice(0, 4));
+});
+
+function query(sql, callback, errback) {
+    var base = "https://www.googleapis.com/fusiontables/v1/query?";
+    var url = base + $.param({sql: sql, key: 'AIzaSyBTQ-SbzIJj5NMW7-1AKfxAgmCsEdXPHo4'});
+    return $.ajax({
+        url: url,
+        dataType: 'jsonp',
+        //jsonp: 'jqjsp',
+        //jsonpCallback: 'jsonCallback',
+        success: callback,
+        error: errback
+    });
+};
+
+</script>
+</body>
+</html>
