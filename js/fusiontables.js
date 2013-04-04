@@ -77,7 +77,18 @@ FusionTable.prototype.render = function(selector, columns) {
     .tablesorterMultiPageFilter({
         filterSelector: root.find('.table-filter input')
     });
-        return this;
+    
+    return this;
 };
+
+/*** TODO
+* add jQuery plugin
+
+$(parent_el).fusiontable({
+    apikey: api_key,
+    table: table_id,
+    columns: [list, of, column, names]
+});
+***/
 
 
