@@ -6,15 +6,17 @@ template_function: _.template
 
 javascripts:
   tables:
+    - components/tabletop/tabletop.js
     - components/jquery/jquery.js
     - components/jquery.tablesorter/js/jquery.tablesorter.js
     - components/underscore/underscore.js
     - js/jquery.tablesorter.multipagefilter.js
     - js/jquery.tablesorter.pager.js
-    - js/fusiontables.js
+    - js/table.js
     - templates/table.jst
 
 stylesheets:
   tables:
     - components/jquery.tablesorter/css/theme.default.css
+    - components/bootstrap/bootstrap/css/bootstrap.css
     - css/style.css
