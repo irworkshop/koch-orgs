@@ -12897,7 +12897,7 @@ var rename = {
     other: "Other",
     purpose: "Purpose",
     rowNumber: "row",
-    totalfunding: "Total Funding"
+    totalfunding: "Total Funding 2007-2011"
 }
 
 function render(data, tabletop) {
