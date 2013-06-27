@@ -1,10 +1,12 @@
 ;jQuery(function($) {
 
 var TABLE = {
-    key: '0AprNP7zjIYS1dHB5S1JDd0RWeGkwOWRhYzFKSHRzblE',
-    wanted: ['Political Giving'],
+    key: '0AprNP7zjIYS1dFdmOHdzSnpjTnJEMVB6bGpDaGhsU1E',
+    wanted: ['Clean Pols'],
     callback: render,
-    columns: ['nameofrecipient', 'charity', 'purpose', 'totalfunding']
+    columns: ['nameofrecipient', 'charity', 'purpose', 'totalfunding'],
+    parseNumbers: true,
+    postProcess: postProcess
 }
 
 var rename = {
@@ -21,16 +23,29 @@ var rename = {
     totalfunding: "Total Funding 2007-2011"
 }
 
+function intcomma(value) {
+    // inspired by django.contrib.humanize.intcomma
+    var origValue = String(value);
+    var newValue = origValue.replace(/^(-?\d+)(\d{3})/, '$1,$2');
+    if (origValue == newValue){
+        return newValue;
+    } else {
+        return intcomma(newValue);
+    }
+};
+
 function render(data, tabletop) {
     var root = $('body')
       , sheet = data[TABLE.wanted[0]]
 
-    $(JST.table({
+    var table = $(JST.table({
         data: sheet.elements,
         table_id: tabletop.key,
         columns: TABLE.columns || sheet.column_names,
         rename: rename
-    })).appendTo(root);
+    }));
+
+    root.html(table);
 
     root.find('table.sortable').tablesorter({
         widthFixed: true
@@ -43,7 +58,10 @@ function render(data, tabletop) {
     .tablesorterMultiPageFilter({
         filterSelector: root.find('.table-filter input')
     });
+}
 
+function postProcess(element) {
+    element['totalfunding'] = '$' + intcomma(element['totalfunding']);
 }
 
 var table = new Tabletop(TABLE);
