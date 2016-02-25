@@ -6,10 +6,10 @@ template_function: _.template
 
 javascripts:
   tables:
-    - components/tabletop/tabletop.js
-    - components/jquery/jquery.js
-    - components/jquery.tablesorter/js/jquery.tablesorter.js
-    - components/underscore/underscore.js
+    - bower_components/tabletop/src/tabletop.js
+    - bower_components/jquery/jquery.js
+    - bower_components/jquery.tablesorter/js/jquery.tablesorter.js
+    - bower_components/underscore/underscore.js
     - js/jquery.tablesorter.multipagefilter.js
     - js/jquery.tablesorter.pager.js
     - js/table.js
@@ -17,6 +17,6 @@ javascripts:
 
 stylesheets:
   tables:
-    - components/jquery.tablesorter/css/theme.default.css
-    - components/bootstrap/bootstrap/css/bootstrap.css
+    - bower_components/jquery.tablesorter/css/theme.default.css
+    - bower_components/bootstrap/bootstrap/css/bootstrap.css
     - css/style.css
