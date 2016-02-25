@@ -1,0 +1,22 @@
+{
+  "name": "koch-orgs",
+  "homepage": "https://github.com/irworkshop/koch-orgs",
+  "authors": [
+    "Chris Amico <eyeseast@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "null",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tabletop": "^1.4.3"
+  }
+}
